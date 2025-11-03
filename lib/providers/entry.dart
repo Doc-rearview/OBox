@@ -8,11 +8,11 @@ import 'package:OBOX/api/client.dart';
 import 'package:OBOX/data/entry.dart';
 
 class EntryProvider extends ChangeNotifier {
-  Map<String, Uint8List> _imageCache = {};
+  final Map<String, Uint8List> _imageCache = {};
 
-  static String _collectionId = "movies";
+  static final String _collectionId = "movies";
 
-  Entry? _selected = null;
+  Entry? _selected;
   Entry? get selected => _selected;
 
   Entry _featured = Entry.empty();
@@ -46,7 +46,7 @@ class EntryProvider extends ChangeNotifier {
 
   Future<void> list() async {
     var result =
-        await ApiClient.database.listDocuments(collectionId: _collectionId, databaseId: '');
+        await ApiClient.database.listDocuments(collectionId: _collectionId, databaseId: 'movie');
 
     _entries = result.documents
         .map((document) => Entry.fromJson(document.data))
@@ -62,7 +62,7 @@ class EntryProvider extends ChangeNotifier {
     }
 
     final result =
-        await ApiClient.storage.getFileView(fileId: entry.thumbnailimageid, bucketId: '');
+        await ApiClient.storage.getFileView(fileId: entry.thumbnailimageid, bucketId: 'moviess');
 
     _imageCache[entry.thumbnailimageid] = result;
 

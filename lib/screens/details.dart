@@ -13,11 +13,13 @@ import '../widgets/buttons/icon.dart';
 class DetailsScreen extends StatefulWidget {
   final Entry _entry;
 
+  // ignore: use_super_parameters, prefer_const_constructors_in_immutables
   DetailsScreen({Key? key, required Entry entry})
       : _entry = entry,
         super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _DetailsScreenState createState() => _DetailsScreenState();
 }
 
@@ -95,7 +97,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
 class _DetailHeader extends StatelessWidget {
   final Entry featured;
 
-  const _DetailHeader({Key? key, required this.featured}) : super(key: key);
+  const _DetailHeader({required this.featured});
 
   @override
   Widget build(BuildContext context) {
@@ -129,6 +131,7 @@ class _DetailHeader extends StatelessWidget {
                     child: Container(
                       height: 500,
                       decoration:
+                          // ignore: deprecated_member_use
                           BoxDecoration(color: Colors.black.withOpacity(0.6)),
                     ),
                   ),

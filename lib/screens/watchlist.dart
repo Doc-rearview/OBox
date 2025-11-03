@@ -11,9 +11,10 @@ import '../widgets/buttons/icon.dart';
 import 'details.dart';
 
 class WatchlistScreen extends StatefulWidget {
-  const WatchlistScreen({Key? key}) : super(key: key);
+  const WatchlistScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _WatchlistScreenState createState() => _WatchlistScreenState();
 }
 
@@ -65,7 +66,7 @@ class _WatchlistScreenState extends State<WatchlistScreen> {
               ),
             ),
             Text(
-              (entry.description ?? "").substring(0, 50) + "...",
+              "${(entry.description ?? "").substring(0, 50)}...",
               style: const TextStyle(
                 color: Colors.grey,
                 fontSize: 14,

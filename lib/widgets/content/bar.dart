@@ -6,7 +6,7 @@ import '../../screens/watchlist.dart';
 class ContentBar extends StatelessWidget {
   final double scrollOffset;
 
-  const ContentBar({Key? key, this.scrollOffset = 0.0}) : super(key: key);
+  const ContentBar({super.key, this.scrollOffset = 0.0});
 
   @override
   Widget build(BuildContext context) {

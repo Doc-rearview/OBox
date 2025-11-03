@@ -9,9 +9,10 @@ import '../providers/entry.dart';
 import 'home.dart';
 
 class NavScreen extends StatefulWidget {
-  const NavScreen({Key? key}) : super(key: key);
+  const NavScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _NavScreenState createState() => _NavScreenState();
 }
 
